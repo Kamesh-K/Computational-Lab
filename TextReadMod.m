@@ -1,0 +1,1 @@
+text=fileread(TextFile.txt)
