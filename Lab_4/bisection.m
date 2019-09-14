@@ -1,7 +1,6 @@
 function [y,y_arr,error_arr]=bisection(f,l,r,tol)
     error=10000;
     x_solve=vpasolve(f);
-    x_solve
     n_solve=size(x_solve,1);
     x_inrange=0;
  %   x_inrange=x_solve(1);
@@ -34,5 +33,5 @@ function [y,y_arr,error_arr]=bisection(f,l,r,tol)
 %         fprintf('Error %f\n',error);
 %         fprintf('Root %f\n',mid);
     end
-    y=mid;
+    y=vpa(mid);
 end

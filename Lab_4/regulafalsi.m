@@ -1,7 +1,6 @@
 function [y,y_arr,error_arr]=regulafalsi(f,l,r,tol)
     error=10000;
     x_solve=vpasolve(f);
-    x_solve
     n_solve=size(x_solve,1);
     x_inrange=0;
  %   x_inrange=x_solve(1);
@@ -11,13 +10,15 @@ function [y,y_arr,error_arr]=regulafalsi(f,l,r,tol)
             break;
         end
     end
-    mid=l;
+    c=l;
     error_arr = [];
     y_arr = [];
     while abs(error) > tol
         val_l=vpa(f(l));
         val_r=vpa(f(r));
-        c=r-(val_r*(r-l)/(val_r-val_l));
+        %c=r-(val_r*(r-l)/(val_r-val_l));
+        c=l*val_r-r*val_l;
+        c=c/(val_r-val_l);
         y_arr = [y_arr c];
         if f(l)*f(c) < 0
              l=l;
@@ -33,5 +34,5 @@ function [y,y_arr,error_arr]=regulafalsi(f,l,r,tol)
 %         fprintf('Error %f\n',error);
 %         fprintf('Root %f\n',mid);
     end
-    y=mid;
+    y=c;
 end
