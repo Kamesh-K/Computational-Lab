@@ -10,12 +10,12 @@ for i=2:n
          % return;
     end
     if f(x(i)) == 0
-        lower=x(i);
-        upper=x(i-1);
+        left=[low x(i)];
+        right=[right x(i-1)];
     end
     if f(x(i-1)) == 0
-        lower=x(i-1);
-        upper=x(i-1);   
+        left=[low x(i-1)];
+        right=[right x(i-1)];   
     end
 end
 %fprintf('\nThe function is continously increasing or decreasing !!\n');

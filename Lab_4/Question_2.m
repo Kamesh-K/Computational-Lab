@@ -1,8 +1,9 @@
 clc
 clear all
 syms x
-f(x)=x*(1-2*x)*(10-2*x)-100;
-f(x)=x^10-1;
+%f(x)=x*(1-2*x)*(10-2*x)-100;
+%f(x)=((sin(6*x))^2)*((x-1)^6)+1;
+f(x)=exp(x)*sin(x);
 s='Enter the initial guess for x : ';
 xo=input(s);
 tol=exp(-12);
