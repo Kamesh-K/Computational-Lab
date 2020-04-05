@@ -1,12 +1,13 @@
 clc
 clear all
 syms x
-%f(x)=x*(1-2*x)*(10-2*x)-100;
+f(x)=x*(16-2*x)*(10-2*x)-100;
 %f(x)=((sin(6*x))^2)*((x-1)^6)+1;
-f(x)=exp(x)*sin(x);
+%f(x)=(x^5)*sin(5*x);
+%f(x)=(x^10)-1
 s='Enter the initial guess for x : ';
 xo=input(s);
-tol=exp(-12);
+tol=10^(-12);
 x_sol=vpasolve(f);
 df_sol=vpasolve(diff(f));
 [y,err_arr_nr]=newton_raphson(f,xo,tol);
@@ -15,7 +16,9 @@ roc(err_arr_nr)
 % s='Enter the initial guess for x : ';
 % x1=input(s);
 % x2=x1+0.1;
-[y,err_arr_sec]=secant_method(f,xo,tol);
+s='Enter the second guess for secant : ';
+diff=input(s)-xo;
+[y,err_arr_sec]=secant_method(f,xo,tol,diff);
 fprintf('Rate of convergence - ')
 roc(err_arr_sec)
 figure,

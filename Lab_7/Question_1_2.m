@@ -1,0 +1,13 @@
+clear all;
+clc;
+close all;
+N_MAX=10;
+T=zeros(N_MAX,N_MAX);
+r=zeros(N_MAX,N_MAX);
+T(:,1)=50;
+T(:,N_MAX)=50;
+T(1,:)=100;
+[T]=gauss_siedel(T);
+err = max(max(r));
+surf(T);
+colorbar;

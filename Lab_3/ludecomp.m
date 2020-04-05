@@ -1,15 +1,16 @@
 function [L,U,P] = ludecomp(A)
 [P,A]=pivot(A);
+A
 n=size(A,1);
-lower=zeros(n,n);
+lower=eye(n,n);
 upper=zeros(n,n);
 for i=1:n
     for k=i:n
         sum=0;
         for j=1:i
             sum=sum+lower(i,j)*upper(j,k);
-            upper(i,k)=A(i,k)-sum;
         end
+            upper(i,k)=A(i,k)-sum;
     end
     for k=i:n
         if i==k

@@ -13,6 +13,16 @@ function [y,y_arr,error_arr]=regulafalsi(f,l,r,tol)
     c=l;
     error_arr = [];
     y_arr = [];
+%     if vpa(f(l)) == 0 
+%         y=l;
+%         error_arr=[0];
+%         return;
+%     end
+%     if vpa(f(r)==0)
+%         y=r;
+%         error_arr=[0];
+%         return;
+%     end
     while abs(error) > tol
         val_l=vpa(f(l));
         val_r=vpa(f(r));

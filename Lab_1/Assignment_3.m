@@ -15,7 +15,7 @@ x_guess=input(s);
 % Initializing the maximum iterations 
 max_iter=10000;
 % While loop to check for convergence 
-while(error>=10^(-6) && iter <max_iter)
+while(error>=10^(-12) && iter <max_iter)
 iter=iter+1;                % Updating the iter for each iteration
 x_new=(n/x_guess)+x_guess;  % Calculating the new value using divide and average method 
 x_new=x_new/2;              

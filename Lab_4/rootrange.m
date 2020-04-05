@@ -10,11 +10,11 @@ for i=2:n
          % return;
     end
     if f(x(i)) == 0
-        left=[low x(i)];
+        left=[left x(i)];
         right=[right x(i-1)];
     end
     if f(x(i-1)) == 0
-        left=[low x(i-1)];
+        left=[left x(i-1)];
         right=[right x(i-1)];   
     end
 end

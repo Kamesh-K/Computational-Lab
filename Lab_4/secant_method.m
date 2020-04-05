@@ -1,11 +1,11 @@
-function [y,err_arr]=secant_method(f,x_1,tol)
+function [y,err_arr]=secant_method(f,x_1,tol,diff)
     iter_max=1000;
     i=0;
     error = 1;
     err_arr = [];
     iter_max=100        ;
     iter=0;
-    x_2=x_1+0.001;  
+    x_2=x_1+diff;  
     while error > tol
         val_x1=vpa(f(x_1));
         val_x2=vpa(f(x_2));

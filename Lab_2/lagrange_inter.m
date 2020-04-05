@@ -16,9 +16,9 @@ for i=1:n
         continue;
     end
     denom=denom*(x_in(i)-x_in(j));
+    count=count+3;
     end
     L(i)=numerator/((x-x_in(i))*(denom));
-    count=count+3;
 end
 y_temp=L*y_in';
 y=y_temp;
